@@ -1,1 +1,4 @@
 picture/ 
+back_end/school_attendance.db
+back_end/__pycache__/
+back_end/models/__pycache__/
