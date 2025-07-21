@@ -389,9 +389,18 @@
        </layout>
       </widget>
       <widget class="QWidget" name="mange_page">
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
        <layout class="QHBoxLayout" name="horizontalLayout_8">
         <item>
          <widget class="QTabWidget" name="mange_tab">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
           <property name="layoutDirection">
            <enum>Qt::RightToLeft</enum>
           </property>
@@ -410,7 +419,7 @@
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>168</width>
+                <width>81</width>
                 <height>20</height>
                </size>
               </property>
@@ -418,6 +427,105 @@
             </item>
             <item>
              <widget class="QTableWidget" name="class_tableWidget">
+              <property name="minimumSize">
+               <size>
+                <width>400</width>
+                <height>400</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>400</width>
+                <height>400</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">/* استایل پایه برای جدول */
+QTableWidget {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-family: Segoe UI, Arial, sans-serif;
+    font-size: 12px;
+    gridline-color: #f0f0f0;
+    outline: 0;
+}
+
+/* استایل آیتم‌های جدول */
+QTableWidget::item {
+    padding: 6px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* استایل آیتم‌های انتخاب شده */
+QTableWidget::item:selected {
+    background-color: #4a90e2;
+    color: #ffffff;
+}
+
+/* استایل هدرهای جدول */
+QHeaderView::section {
+    background-color: #f8f9fa;
+    color: #495057;
+    padding: 8px;
+    border: none;
+    font-weight: 500;
+    text-align: left;
+}
+
+/* افکت hover روی هدرها */
+QHeaderView::section:hover {
+    background-color: #e9ecef;
+}
+
+/* استایل گوشه جدول (محل تقاطع هدرهای عمودی و افقی) */
+QTableCornerButton::section {
+    background-color: #f8f9fa;
+    border: none;
+}
+
+/* استایل اسکرول بار عمودی */
+QScrollBar:vertical {
+    border: none;
+    background: #f8f9fa;
+    width: 10px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: #ced4da;
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0;
+    background: none;
+}
+
+/* استایل اسکرول بار افقی (در صورت نیاز) */
+QScrollBar:horizontal {
+    border: none;
+    background: #f8f9fa;
+    height: 10px;
+    margin: 0;
+}
+
+QScrollBar::handle:horizontal {
+    background: #ced4da;
+    min-width: 20px;
+    border-radius: 5px;
+}</string>
+              </property>
+              <attribute name="horizontalHeaderCascadingSectionResizes">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="horizontalHeaderStretchLastSection">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="verticalHeaderStretchLastSection">
+               <bool>false</bool>
+              </attribute>
               <column>
                <property name="text">
                 <string>grade</string>
@@ -442,7 +550,7 @@
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>168</width>
+                <width>81</width>
                 <height>20</height>
                </size>
               </property>
@@ -454,82 +562,169 @@
            <attribute name="title">
             <string>افزودن کلاس جدید</string>
            </attribute>
-           <widget class="QWidget" name="widget_7" native="true">
-            <property name="geometry">
-             <rect>
-              <x>50</x>
-              <y>50</y>
-              <width>541</width>
-              <height>71</height>
-             </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_7">
-             <item>
-              <widget class="QLabel" name="label_11">
-               <property name="text">
-                <string>پایه :</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="Grade_comboBox">
+           <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <item>
+             <widget class="QWidget" name="widget_7" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="autoFillBackground">
+               <bool>true</bool>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_7">
                <item>
-                <property name="text">
-                 <string>دهم </string>
-                </property>
+                <widget class="QLabel" name="label_11">
+                 <property name="minimumSize">
+                  <size>
+                   <width>75</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>80</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel{
+ background-color: #ffffff;
+  border: 1px solid #795548; /* کادر دور فریم (ضخامت 2px و رنگ قهوه‌ای) */
+  padding:5 px;
+  border-radius: 10px; /* لبه‌های گرد */
+  text-align:center;
+  font-family: &quot;B Nazanin&quot;;
+  font-size: 15px;
+  font-weight: bold;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>پایه :</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
                </item>
                <item>
-                <property name="text">
-                 <string>یازدهم</string>
-                </property>
+                <widget class="QComboBox" name="Grade_comboBox">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="layoutDirection">
+                  <enum>Qt::RightToLeft</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>دهم </string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>یازدهم</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>دوازدهم</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item>
-                <property name="text">
-                 <string>دوازدهم</string>
-                </property>
+                <widget class="QLabel" name="label">
+                 <property name="minimumSize">
+                  <size>
+                   <width>75</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>85</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel{
+ background-color: #ffffff;
+  border: 1px solid #795548; /* کادر دور فریم (ضخامت 2px و رنگ قهوه‌ای) */
+  padding:5 px;
+  border-radius: 10px; /* لبه‌های گرد */
+  text-align:center;
+  font-family: &quot;B Nazanin&quot;;
+  font-size: 15px;
+  font-weight: bold;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>رشته:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
                </item>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label">
-               <property name="text">
-                <string>رشته:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="Field_comboBox">
                <item>
-                <property name="text">
-                 <string>ماشین  ابزار </string>
-                </property>
+                <widget class="QComboBox" name="Field_comboBox">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="autoFillBackground">
+                  <bool>true</bool>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">
+
+     
+
+</string>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>ماشین ابزار </string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>ساختمان</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>مکانیک</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>مکاترونیک</string>
+                  </property>
+                 </item>
+                </widget>
                </item>
                <item>
-                <property name="text">
-                 <string>ساختمان</string>
-                </property>
+                <widget class="QPushButton" name="sub_btn">
+                 <property name="text">
+                  <string>ثبت</string>
+                 </property>
+                </widget>
                </item>
-               <item>
-                <property name="text">
-                 <string>مکانیک</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>مکاترونیک</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="sub_btn">
-               <property name="text">
-                <string>ثبت</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="tab_2">
            <attribute name="title">
@@ -562,63 +757,414 @@
                 <layout class="QFormLayout" name="formLayout">
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_12">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="layoutDirection">
+                    <enum>Qt::LeftToRight</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel{
+ background-color: #ffffff;
+  border: 1px solid #795548; /* کادر دور فریم (ضخامت 2px و رنگ قهوه‌ای) */
+  padding:5 px;
+  border-radius: 10px; /* لبه‌های گرد */
+  text-align:center;
+  font-family: &quot;B Nazanin&quot;;
+  font-size: 15px;
+  font-weight: bold;
+}</string>
+                   </property>
                    <property name="text">
-                    <string>کد ملی</string>
+                    <string>کد ملی:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="0">
                   <widget class="QLabel" name="label_13">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="layoutDirection">
+                    <enum>Qt::LeftToRight</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel{
+ background-color: #ffffff;
+  border: 1px solid #795548; /* کادر دور فریم (ضخامت 2px و رنگ قهوه‌ای) */
+  padding:5 px;
+  border-radius: 10px; /* لبه‌های گرد */
+  text-align:center;
+  font-family: &quot;B Nazanin&quot;;
+  font-size: 15px;
+  font-weight: bold;
+}</string>
+                   </property>
                    <property name="text">
-                    <string>نام</string>
+                    <string>نام:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
                  <item row="2" column="0">
                   <widget class="QLabel" name="label_14">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel{
+ background-color: #ffffff;
+  border: 1px solid #795548; /* کادر دور فریم (ضخامت 2px و رنگ قهوه‌ای) */
+  padding:5 px;
+  border-radius: 10px; /* لبه‌های گرد */
+  text-align:center;
+  font-family: &quot;B Nazanin&quot;;
+  font-size: 15px;
+  font-weight: bold;
+}</string>
+                   </property>
                    <property name="text">
-                    <string>نام خانوادگی</string>
+                    <string>نام خانوادگی :</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
                  <item row="3" column="0">
                   <widget class="QLabel" name="label_15">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="layoutDirection">
+                    <enum>Qt::LeftToRight</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel{
+ background-color: #ffffff;
+  border: 1px solid #795548; /* کادر دور فریم (ضخامت 2px و رنگ قهوه‌ای) */
+  padding:5 px;
+  border-radius: 10px; /* لبه‌های گرد */
+  text-align:center;
+  font-family: &quot;B Nazanin&quot;;
+  font-size: 15px;
+  font-weight: bold;
+}</string>
+                   </property>
                    <property name="text">
-                    <string>نام پدر</string>
+                    <string>نام پدر :</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
                  <item row="4" column="0">
                   <widget class="QLabel" name="label_16">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="layoutDirection">
+                    <enum>Qt::LeftToRight</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel{
+ background-color: #ffffff;
+  border: 1px solid #795548; /* کادر دور فریم (ضخامت 2px و رنگ قهوه‌ای) */
+  padding:5 px;
+  border-radius: 10px; /* لبه‌های گرد */
+  text-align:center;
+  font-family: &quot;B Nazanin&quot;;
+  font-size: 15px;
+  font-weight: bold;
+}</string>
+                   </property>
                    <property name="text">
-                    <string>کلاس</string>
+                    <string>کلاس :</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
                  <item row="5" column="0">
                   <widget class="QLabel" name="label_17">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="layoutDirection">
+                    <enum>Qt::LeftToRight</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel{
+ background-color: #ffffff;
+  border: 1px solid #795548; /* کادر دور فریم (ضخامت 2px و رنگ قهوه‌ای) */
+  padding:5 px;
+  border-radius: 10px; /* لبه‌های گرد */
+  text-align:center;
+  font-family: &quot;B Nazanin&quot;;
+  font-size: 15px;
+  font-weight: bold;
+}</string>
+                   </property>
                    <property name="text">
-                    <string>شماره تماس</string>
+                    <string>شماره تماس :</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="1">
-                  <widget class="QLineEdit" name="lineEdit_2"/>
+                  <widget class="QLineEdit" name="lineEdit_2">
+                   <property name="styleSheet">
+                    <string notr="true">QLineEdit {
+    /* تنظیمات فونت و متن */
+    font-family: &quot;Segoe UI&quot;, &quot;B Nazanin&quot;, &quot;Arial&quot;;
+    font-size: 12px;
+    color: #495057;
+    
+    /* تنظیمات حاشیه و فاصله */
+    padding: 6px 8px;
+    margin: 2px;
+    
+    /* تنظیمات ظاهری */
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    
+    /* جلوه‌های ویژه */
+    selection-background-color: #007bff;
+    selection-color: #ffffff;
+}</string>
+                   </property>
+                  </widget>
                  </item>
                  <item row="2" column="1">
-                  <widget class="QLineEdit" name="lineEdit_3"/>
+                  <widget class="QLineEdit" name="lineEdit_3">
+                   <property name="styleSheet">
+                    <string notr="true">QLineEdit {
+    /* تنظیمات فونت و متن */
+    font-family: &quot;Segoe UI&quot;, &quot;B Nazanin&quot;, &quot;Arial&quot;;
+    font-size: 12px;
+    color: #495057;
+    
+    /* تنظیمات حاشیه و فاصله */
+    padding: 6px 8px;
+    margin: 2px;
+    
+    /* تنظیمات ظاهری */
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    
+    /* جلوه‌های ویژه */
+    selection-background-color: #007bff;
+    selection-color: #ffffff;
+}</string>
+                   </property>
+                  </widget>
                  </item>
                  <item row="3" column="1">
-                  <widget class="QLineEdit" name="lineEdit_4"/>
+                  <widget class="QLineEdit" name="lineEdit_4">
+                   <property name="styleSheet">
+                    <string notr="true">QLineEdit {
+    /* تنظیمات فونت و متن */
+    font-family: &quot;Segoe UI&quot;, &quot;B Nazanin&quot;, &quot;Arial&quot;;
+    font-size: 12px;
+    color: #495057;
+    
+    /* تنظیمات حاشیه و فاصله */
+    padding: 6px 8px;
+    margin: 2px;
+    
+    /* تنظیمات ظاهری */
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    
+    /* جلوه‌های ویژه */
+    selection-background-color: #007bff;
+    selection-color: #ffffff;
+}</string>
+                   </property>
+                  </widget>
                  </item>
                  <item row="4" column="1">
-                  <widget class="QComboBox" name="comboBox"/>
+                  <widget class="QComboBox" name="comboBox">
+                   <property name="minimumSize">
+                    <size>
+                     <width>202</width>
+                     <height>32</height>
+                    </size>
+                   </property>
+                   <property name="layoutDirection">
+                    <enum>Qt::RightToLeft</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QComboBox {
+    /* تنظیمات فونت */
+    font-family: &quot;B Nazanin&quot;, &quot;Segoe UI&quot;, Arial;
+    font-size: 13px;
+    color: #495057;
+    
+    /* تنظیمات ظاهری */
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  
+    min-width: 200px;
+    min-height: 30px;
+    
+    /* تراز متن برای فارسی - راه حل اصلی */
+    text-align: right;
+    direction: rtl;
+}
+
+/* راهکار جایگزین برای تراز متن */
+QComboBox QAbstractItemView {
+    text-align: right;
+    direction: rtl;
+}
+
+/* عنصر متن داخل کامبوباکس */
+QComboBox QLineEdit {
+    text-align: right;
+    padding-right: 5px;
+    direction: rtl;
+}</string>
+                   </property>
+                   <property name="currentText">
+                    <string>ریاضی</string>
+                   </property>
+                   <property name="maxCount">
+                    <number>2147483646</number>
+                   </property>
+                   <property name="insertPolicy">
+                    <enum>QComboBox::InsertAtBottom</enum>
+                   </property>
+                   <property name="sizeAdjustPolicy">
+                    <enum>QComboBox::AdjustToContents</enum>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>ریاضی</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>تجربی</string>
+                    </property>
+                   </item>
+                  </widget>
                  </item>
                  <item row="5" column="1">
-                  <widget class="QLineEdit" name="lineEdit_5"/>
+                  <widget class="QLineEdit" name="lineEdit_5">
+                   <property name="styleSheet">
+                    <string notr="true">QLineEdit {
+    /* تنظیمات فونت و متن */
+    font-family: &quot;Segoe UI&quot;, &quot;B Nazanin&quot;, &quot;Arial&quot;;
+    font-size: 12px;
+    color: #495057;
+    
+    /* تنظیمات حاشیه و فاصله */
+    padding: 6px 8px;
+    margin: 2px;
+    
+    /* تنظیمات ظاهری */
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    
+    /* جلوه‌های ویژه */
+    selection-background-color: #007bff;
+    selection-color: #ffffff;
+}</string>
+                   </property>
+                  </widget>
                  </item>
                  <item row="0" column="1">
                   <widget class="QLineEdit" name="lineEdit">
+                   <property name="styleSheet">
+                    <string notr="true">QLineEdit {
+    /* تنظیمات فونت و متن */
+    font-family: &quot;Segoe UI&quot;, &quot;B Nazanin&quot;, &quot;Arial&quot;;
+    font-size: 12px;
+    color: #495057;
+    
+    /* تنظیمات حاشیه و فاصله */
+    padding: 6px 8px;
+    margin: 2px;
+    
+    /* تنظیمات ظاهری */
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    
+    /* جلوه‌های ویژه */
+    selection-background-color: #007bff;
+    selection-color: #ffffff;
+}</string>
+                   </property>
                    <property name="inputMask">
                     <string/>
                    </property>
@@ -688,7 +1234,7 @@
      <widget class="QWidget" name="widget" native="true">
       <property name="minimumSize">
        <size>
-        <width>120</width>
+        <width>150</width>
         <height>0</height>
        </size>
       </property>
@@ -711,13 +1257,13 @@
         <widget class="QLabel" name="pic_main">
          <property name="minimumSize">
           <size>
-           <width>100</width>
+           <width>130</width>
            <height>100</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>100</width>
+           <width>130</width>
            <height>100</height>
           </size>
          </property>
@@ -739,7 +1285,7 @@
         <widget class="QPushButton" name="main_btn">
          <property name="font">
           <font>
-           <family>B Mitra</family>
+           <family>B Nazanin</family>
            <pointsize>-1</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -747,6 +1293,7 @@
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
+font-family: &quot;B Nazanin&quot;;
 background-color:#4CAF50;
 color:white;
 font-size:16px;
@@ -773,7 +1320,7 @@ QPushButton:hover {
         <widget class="QPushButton" name="manager_btn">
          <property name="font">
           <font>
-           <family>B Mitra</family>
+           <family>B Nazanin</family>
            <pointsize>-1</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -781,6 +1328,7 @@ QPushButton:hover {
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
+font-family: &quot;B Nazanin&quot;;
 background-color:#4CAF50;
 color:white;
 font-size:16px;
@@ -807,7 +1355,7 @@ QPushButton:hover {
         <widget class="QPushButton" name="pushButton_3">
          <property name="font">
           <font>
-           <family>B Mitra</family>
+           <family>B Nazanin</family>
            <pointsize>-1</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -815,6 +1363,7 @@ QPushButton:hover {
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
+font-family: &quot;B Nazanin&quot;;
 background-color:#4CAF50;
 color:white;
 font-size:16px;
@@ -841,7 +1390,7 @@ QPushButton:hover {
         <widget class="QPushButton" name="pushButton_4">
          <property name="font">
           <font>
-           <family>B Mitra</family>
+           <family>B Nazanin</family>
            <pointsize>-1</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -849,6 +1398,7 @@ QPushButton:hover {
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
+font-family: &quot;B Nazanin&quot;;
 background-color:#4CAF50;
 color:white;
 font-size:16px;
@@ -875,7 +1425,7 @@ QPushButton:hover {
         <widget class="QPushButton" name="pushButton_5">
          <property name="font">
           <font>
-           <family>B Mitra</family>
+           <family>B Nazanin</family>
            <pointsize>-1</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -883,6 +1433,7 @@ QPushButton:hover {
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
+font-family: &quot;B Nazanin&quot;;
 background-color:#4CAF50;
 color:white;
 font-size:16px;
