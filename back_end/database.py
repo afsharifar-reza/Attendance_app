@@ -1,11 +1,13 @@
-# backend/database.py
+# back_end/database.py
 
 import sqlite3
+import os
 
-def get_connection(db_name="school_attendance.db"):
+DB_PATH = os.path.join(os.path.dirname(__file__), "school_attendance.db")
+
+def get_connection():
     try:
-        conn = sqlite3.connect(db_name)
-        return conn
+        return sqlite3.connect(DB_PATH)
     except sqlite3.Error as e:
         print(f"[!] Database connection error: {e}")
         return None

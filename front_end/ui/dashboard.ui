@@ -16,7 +16,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QStackedWidget" name="stackedWidget">
+     <widget class="QStackedWidget" name="stackedWidget_dashboard">
       <property name="styleSheet">
        <string notr="true">QStackedWidget{
  background-color: #EAEFEF;
@@ -388,62 +388,274 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="absence_page">
+      <widget class="QWidget" name="mange_page">
        <layout class="QHBoxLayout" name="horizontalLayout_8">
         <item>
-         <widget class="QFrame" name="frame_2">
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+         <widget class="QTabWidget" name="mange_tab">
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
           </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
+          <property name="currentIndex">
+           <number>1</number>
           </property>
-          <widget class="QWidget" name="widget_7" native="true">
-           <property name="geometry">
-            <rect>
-             <x>100</x>
-             <y>20</y>
-             <width>421</width>
-             <height>61</height>
-            </rect>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <widget class="QWidget" name="tab_4">
+           <attribute name="title">
+            <string>لیست کلاسها</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
             <item>
-             <widget class="QPushButton" name="pushButton_6">
-              <property name="minimumSize">
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
                <size>
-                <width>100</width>
-                <height>0</height>
+                <width>168</width>
+                <height>20</height>
                </size>
               </property>
-              <property name="font">
-               <font>
-                <family>B Mitra</family>
-                <pointsize>-1</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QTableWidget" name="class_tableWidget">
+              <column>
+               <property name="text">
+                <string>grade</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>field</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>class_nam</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
               </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton{
-background-color:#FFE3BB;
-color:#000;
-font-size:16px;
-border:none;
-border-radius:5px;
-padding:10 px;
-}
-
-QPushButton:hover {
-  background-color: #F68537; /* سبز تیره‌تر هنگام hover */
-  color: #000;
-  transform: translateY(-2px); /* حرکت جزئی به بالا */
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}</string>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>168</width>
+                <height>20</height>
+               </size>
               </property>
-              <property name="text">
-               <string>اعمال</string>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab">
+           <attribute name="title">
+            <string>افزودن کلاس جدید</string>
+           </attribute>
+           <widget class="QWidget" name="widget_7" native="true">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>50</y>
+              <width>541</width>
+              <height>71</height>
+             </rect>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <widget class="QLabel" name="label_11">
+               <property name="text">
+                <string>پایه :</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="Grade_comboBox">
+               <item>
+                <property name="text">
+                 <string>دهم </string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>یازدهم</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>دوازدهم</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>رشته:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="Field_comboBox">
+               <item>
+                <property name="text">
+                 <string>ماشین  ابزار </string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>ساختمان</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>مکانیک</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>مکاترونیک</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="sub_btn">
+               <property name="text">
+                <string>ثبت</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="tab_2">
+           <attribute name="title">
+            <string>افزودن دانش آموز</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
               </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QFrame" name="frame_2">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <item>
+                <layout class="QFormLayout" name="formLayout">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_12">
+                   <property name="text">
+                    <string>کد ملی</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="label_13">
+                   <property name="text">
+                    <string>نام</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="label_14">
+                   <property name="text">
+                    <string>نام خانوادگی</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QLabel" name="label_15">
+                   <property name="text">
+                    <string>نام پدر</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="0">
+                  <widget class="QLabel" name="label_16">
+                   <property name="text">
+                    <string>کلاس</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="0">
+                  <widget class="QLabel" name="label_17">
+                   <property name="text">
+                    <string>شماره تماس</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="lineEdit_2"/>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QLineEdit" name="lineEdit_3"/>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QLineEdit" name="lineEdit_4"/>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QComboBox" name="comboBox"/>
+                 </item>
+                 <item row="5" column="1">
+                  <widget class="QLineEdit" name="lineEdit_5"/>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="lineEdit">
+                   <property name="inputMask">
+                    <string/>
+                   </property>
+                   <property name="maxLength">
+                    <number>32765</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_8" native="true">
+                 <layout class="QHBoxLayout" name="horizontalLayout_10">
+                  <item>
+                   <widget class="QPushButton" name="pushButton">
+                    <property name="text">
+                     <string>افزودن</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
              </widget>
             </item>
             <item>
@@ -459,93 +671,12 @@ QPushButton:hover {
               </property>
              </spacer>
             </item>
-            <item>
-             <widget class="QComboBox" name="comboBox_2">
-              <property name="layoutDirection">
-               <enum>Qt::RightToLeft</enum>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QComboBox {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-QTabWidget::pane {
-    border: 1px solid #ddd;
-}</string>
-              </property>
-              <property name="editable">
-               <bool>false</bool>
-              </property>
-              <item>
-               <property name="text">
-                <string>مکاترونیک</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>ماشین ابزار</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>مکانیک</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>ساختمان</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_12">
-              <property name="text">
-               <string>رشته:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QComboBox" name="comboBox">
-              <property name="layoutDirection">
-               <enum>Qt::RightToLeft</enum>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QComboBox {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-QTabWidget::pane {
-    border: 1px solid #ddd;
-}</string>
-              </property>
-              <item>
-               <property name="text">
-                <string>دهم</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>یازدهم</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>دوازدهم</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_11">
-              <property name="text">
-               <string>پایه:</string>
-              </property>
-             </widget>
-            </item>
            </layout>
+          </widget>
+          <widget class="QWidget" name="tab_3">
+           <attribute name="title">
+            <string>ویرایش</string>
+           </attribute>
           </widget>
          </widget>
         </item>
@@ -577,7 +708,7 @@ QTabWidget::pane {
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="pic_main">
          <property name="minimumSize">
           <size>
            <width>100</width>
@@ -594,7 +725,7 @@ QTabWidget::pane {
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../../picture/Gemini_Generated_Image_v1nfy1v1nfy1v1nf.png</pixmap>
+          <pixmap>../picture/logo.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -605,7 +736,7 @@ QTabWidget::pane {
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="main_btn">
          <property name="font">
           <font>
            <family>B Mitra</family>
@@ -639,7 +770,7 @@ QPushButton:hover {
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="manager_btn">
          <property name="font">
           <font>
            <family>B Mitra</family>
@@ -668,7 +799,7 @@ QPushButton:hover {
 </string>
          </property>
          <property name="text">
-          <string>غیبت</string>
+          <string>مدیریت</string>
          </property>
         </widget>
        </item>
@@ -702,7 +833,7 @@ QPushButton:hover {
 </string>
          </property>
          <property name="text">
-          <string>تاخیر</string>
+          <string>ثبت وضعیت</string>
          </property>
         </widget>
        </item>
@@ -798,7 +929,7 @@ QPushButton:hover {
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
