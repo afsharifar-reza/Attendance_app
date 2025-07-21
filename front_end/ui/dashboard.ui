@@ -405,7 +405,7 @@
            <enum>Qt::RightToLeft</enum>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="tab_4">
            <attribute name="title">
@@ -686,11 +686,7 @@ QScrollBar::handle:horizontal {
                   <bool>true</bool>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">
-
-     
-
-</string>
+                  <string notr="true"/>
                  </property>
                  <item>
                   <property name="text">
@@ -975,7 +971,7 @@ QScrollBar::handle:horizontal {
                   </widget>
                  </item>
                  <item row="1" column="1">
-                  <widget class="QLineEdit" name="lineEdit_2">
+                  <widget class="QLineEdit" name="first_name_lineEdit">
                    <property name="styleSheet">
                     <string notr="true">QLineEdit {
     /* تنظیمات فونت و متن */
@@ -1000,7 +996,7 @@ QScrollBar::handle:horizontal {
                   </widget>
                  </item>
                  <item row="2" column="1">
-                  <widget class="QLineEdit" name="lineEdit_3">
+                  <widget class="QLineEdit" name="last_name_lineEdit">
                    <property name="styleSheet">
                     <string notr="true">QLineEdit {
     /* تنظیمات فونت و متن */
@@ -1025,7 +1021,7 @@ QScrollBar::handle:horizontal {
                   </widget>
                  </item>
                  <item row="3" column="1">
-                  <widget class="QLineEdit" name="lineEdit_4">
+                  <widget class="QLineEdit" name="father_name_lineEdit">
                    <property name="styleSheet">
                     <string notr="true">QLineEdit {
     /* تنظیمات فونت و متن */
@@ -1050,7 +1046,7 @@ QScrollBar::handle:horizontal {
                   </widget>
                  </item>
                  <item row="4" column="1">
-                  <widget class="QComboBox" name="comboBox">
+                  <widget class="QComboBox" name="class_comboBox">
                    <property name="minimumSize">
                     <size>
                      <width>202</width>
@@ -1118,7 +1114,7 @@ QComboBox QLineEdit {
                   </widget>
                  </item>
                  <item row="5" column="1">
-                  <widget class="QLineEdit" name="lineEdit_5">
+                  <widget class="QLineEdit" name="parent_phone_lineEdit">
                    <property name="styleSheet">
                     <string notr="true">QLineEdit {
     /* تنظیمات فونت و متن */
@@ -1143,7 +1139,7 @@ QComboBox QLineEdit {
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QLineEdit" name="lineEdit">
+                  <widget class="QLineEdit" name="student_id_lineEdit">
                    <property name="styleSheet">
                     <string notr="true">QLineEdit {
     /* تنظیمات فونت و متن */
@@ -1179,7 +1175,7 @@ QComboBox QLineEdit {
                 <widget class="QWidget" name="widget_8" native="true">
                  <layout class="QHBoxLayout" name="horizontalLayout_10">
                   <item>
-                   <widget class="QPushButton" name="pushButton">
+                   <widget class="QPushButton" name="submit_student_btn">
                     <property name="text">
                      <string>افزودن</string>
                     </property>

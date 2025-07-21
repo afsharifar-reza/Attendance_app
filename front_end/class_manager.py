@@ -61,3 +61,12 @@ class ClassManager:
                 
         except Exception as e:
             QMessageBox.critical(None, "خطا", f"خطا در بارگذاری داده‌ها: {str(e)}")
+
+
+    def load_classes_into_combobox(self):
+        print("load_classes_into_combobox called")  # برای تست
+        self.ui.class_comboBox.clear()
+
+        class_list = self.class_model.get_all_classes()
+        for _, _, _, class_name in class_list:
+            self.ui.class_comboBox.addItem(class_name)

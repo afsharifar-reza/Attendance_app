@@ -568,9 +568,9 @@ class Ui_MainWindow(object):
 
         self.formLayout.setWidget(5, QFormLayout.ItemRole.LabelRole, self.label_17)
 
-        self.lineEdit_2 = QLineEdit(self.frame_2)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-        self.lineEdit_2.setStyleSheet(u"QLineEdit {\n"
+        self.first_name_lineEdit = QLineEdit(self.frame_2)
+        self.first_name_lineEdit.setObjectName(u"first_name_lineEdit")
+        self.first_name_lineEdit.setStyleSheet(u"QLineEdit {\n"
 "    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a \u0648 \u0645\u062a\u0646 */\n"
 "    font-family: \"Segoe UI\", \"B Nazanin\", \"Arial\";\n"
 "    font-size: 12px;\n"
@@ -590,11 +590,11 @@ class Ui_MainWindow(object):
 "    selection-color: #ffffff;\n"
 "}")
 
-        self.formLayout.setWidget(1, QFormLayout.ItemRole.FieldRole, self.lineEdit_2)
+        self.formLayout.setWidget(1, QFormLayout.ItemRole.FieldRole, self.first_name_lineEdit)
 
-        self.lineEdit_3 = QLineEdit(self.frame_2)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
-        self.lineEdit_3.setStyleSheet(u"QLineEdit {\n"
+        self.last_name_lineEdit = QLineEdit(self.frame_2)
+        self.last_name_lineEdit.setObjectName(u"last_name_lineEdit")
+        self.last_name_lineEdit.setStyleSheet(u"QLineEdit {\n"
 "    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a \u0648 \u0645\u062a\u0646 */\n"
 "    font-family: \"Segoe UI\", \"B Nazanin\", \"Arial\";\n"
 "    font-size: 12px;\n"
@@ -614,11 +614,11 @@ class Ui_MainWindow(object):
 "    selection-color: #ffffff;\n"
 "}")
 
-        self.formLayout.setWidget(2, QFormLayout.ItemRole.FieldRole, self.lineEdit_3)
+        self.formLayout.setWidget(2, QFormLayout.ItemRole.FieldRole, self.last_name_lineEdit)
 
-        self.lineEdit_4 = QLineEdit(self.frame_2)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
-        self.lineEdit_4.setStyleSheet(u"QLineEdit {\n"
+        self.father_name_lineEdit = QLineEdit(self.frame_2)
+        self.father_name_lineEdit.setObjectName(u"father_name_lineEdit")
+        self.father_name_lineEdit.setStyleSheet(u"QLineEdit {\n"
 "    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a \u0648 \u0645\u062a\u0646 */\n"
 "    font-family: \"Segoe UI\", \"B Nazanin\", \"Arial\";\n"
 "    font-size: 12px;\n"
@@ -638,15 +638,15 @@ class Ui_MainWindow(object):
 "    selection-color: #ffffff;\n"
 "}")
 
-        self.formLayout.setWidget(3, QFormLayout.ItemRole.FieldRole, self.lineEdit_4)
+        self.formLayout.setWidget(3, QFormLayout.ItemRole.FieldRole, self.father_name_lineEdit)
 
-        self.comboBox = QComboBox(self.frame_2)
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setMinimumSize(QSize(202, 32))
-        self.comboBox.setLayoutDirection(Qt.RightToLeft)
-        self.comboBox.setStyleSheet(u"QComboBox {\n"
+        self.class_comboBox = QComboBox(self.frame_2)
+        self.class_comboBox.addItem("")
+        self.class_comboBox.addItem("")
+        self.class_comboBox.setObjectName(u"class_comboBox")
+        self.class_comboBox.setMinimumSize(QSize(202, 32))
+        self.class_comboBox.setLayoutDirection(Qt.RightToLeft)
+        self.class_comboBox.setStyleSheet(u"QComboBox {\n"
 "    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a */\n"
 "    font-family: \"B Nazanin\", \"Segoe UI\", Arial;\n"
 "    font-size: 13px;\n"
@@ -678,15 +678,15 @@ class Ui_MainWindow(object):
 "    padding-right: 5px;\n"
 "    direction: rtl;\n"
 "}")
-        self.comboBox.setMaxCount(2147483646)
-        self.comboBox.setInsertPolicy(QComboBox.InsertAtBottom)
-        self.comboBox.setSizeAdjustPolicy(QComboBox.AdjustToContents)
+        self.class_comboBox.setMaxCount(2147483646)
+        self.class_comboBox.setInsertPolicy(QComboBox.InsertAtBottom)
+        self.class_comboBox.setSizeAdjustPolicy(QComboBox.AdjustToContents)
 
-        self.formLayout.setWidget(4, QFormLayout.ItemRole.FieldRole, self.comboBox)
+        self.formLayout.setWidget(4, QFormLayout.ItemRole.FieldRole, self.class_comboBox)
 
-        self.lineEdit_5 = QLineEdit(self.frame_2)
-        self.lineEdit_5.setObjectName(u"lineEdit_5")
-        self.lineEdit_5.setStyleSheet(u"QLineEdit {\n"
+        self.parent_phone_lineEdit = QLineEdit(self.frame_2)
+        self.parent_phone_lineEdit.setObjectName(u"parent_phone_lineEdit")
+        self.parent_phone_lineEdit.setStyleSheet(u"QLineEdit {\n"
 "    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a \u0648 \u0645\u062a\u0646 */\n"
 "    font-family: \"Segoe UI\", \"B Nazanin\", \"Arial\";\n"
 "    font-size: 12px;\n"
@@ -706,11 +706,11 @@ class Ui_MainWindow(object):
 "    selection-color: #ffffff;\n"
 "}")
 
-        self.formLayout.setWidget(5, QFormLayout.ItemRole.FieldRole, self.lineEdit_5)
+        self.formLayout.setWidget(5, QFormLayout.ItemRole.FieldRole, self.parent_phone_lineEdit)
 
-        self.lineEdit = QLineEdit(self.frame_2)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setStyleSheet(u"QLineEdit {\n"
+        self.student_id_lineEdit = QLineEdit(self.frame_2)
+        self.student_id_lineEdit.setObjectName(u"student_id_lineEdit")
+        self.student_id_lineEdit.setStyleSheet(u"QLineEdit {\n"
 "    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a \u0648 \u0645\u062a\u0646 */\n"
 "    font-family: \"Segoe UI\", \"B Nazanin\", \"Arial\";\n"
 "    font-size: 12px;\n"
@@ -729,9 +729,9 @@ class Ui_MainWindow(object):
 "    selection-background-color: #007bff;\n"
 "    selection-color: #ffffff;\n"
 "}")
-        self.lineEdit.setMaxLength(32765)
+        self.student_id_lineEdit.setMaxLength(32765)
 
-        self.formLayout.setWidget(0, QFormLayout.ItemRole.FieldRole, self.lineEdit)
+        self.formLayout.setWidget(0, QFormLayout.ItemRole.FieldRole, self.student_id_lineEdit)
 
 
         self.verticalLayout_4.addLayout(self.formLayout)
@@ -740,10 +740,10 @@ class Ui_MainWindow(object):
         self.widget_8.setObjectName(u"widget_8")
         self.horizontalLayout_10 = QHBoxLayout(self.widget_8)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.pushButton = QPushButton(self.widget_8)
-        self.pushButton.setObjectName(u"pushButton")
+        self.submit_student_btn = QPushButton(self.widget_8)
+        self.submit_student_btn.setObjectName(u"submit_student_btn")
 
-        self.horizontalLayout_10.addWidget(self.pushButton)
+        self.horizontalLayout_10.addWidget(self.submit_student_btn)
 
 
         self.verticalLayout_4.addWidget(self.widget_8)
@@ -934,7 +934,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.stackedWidget_dashboard.setCurrentIndex(1)
-        self.mange_tab.setCurrentIndex(1)
+        self.mange_tab.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -977,12 +977,12 @@ class Ui_MainWindow(object):
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0627\u0645 \u067e\u062f\u0631 :", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"\u06a9\u0644\u0627\u0633 :", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0645\u0627\u0631\u0647 \u062a\u0645\u0627\u0633 :", None))
-        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"\u0631\u06cc\u0627\u0636\u06cc", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"\u062a\u062c\u0631\u0628\u06cc", None))
+        self.class_comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"\u0631\u06cc\u0627\u0636\u06cc", None))
+        self.class_comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"\u062a\u062c\u0631\u0628\u06cc", None))
 
-        self.comboBox.setCurrentText(QCoreApplication.translate("MainWindow", u"\u0631\u06cc\u0627\u0636\u06cc", None))
-        self.lineEdit.setInputMask("")
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0641\u0632\u0648\u062f\u0646", None))
+        self.class_comboBox.setCurrentText(QCoreApplication.translate("MainWindow", u"\u0631\u06cc\u0627\u0636\u06cc", None))
+        self.student_id_lineEdit.setInputMask("")
+        self.submit_student_btn.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0641\u0632\u0648\u062f\u0646", None))
         self.mange_tab.setTabText(self.mange_tab.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"\u0627\u0641\u0632\u0648\u062f\u0646 \u062f\u0627\u0646\u0634 \u0622\u0645\u0648\u0632", None))
         self.mange_tab.setTabText(self.mange_tab.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"\u0648\u06cc\u0631\u0627\u06cc\u0634", None))
         self.pic_main.setText("")
