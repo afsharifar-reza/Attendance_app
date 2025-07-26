@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QMessageBox, QTableWidgetItem
+from PySide6.QtWidgets import QMessageBox, QTableWidgetItem, QComboBox
 from back_end.models.class_model import ClassModel
 
 class ClassManager:
@@ -63,10 +63,11 @@ class ClassManager:
             QMessageBox.critical(None, "خطا", f"خطا در بارگذاری داده‌ها: {str(e)}")
 
 
-    def load_classes_into_combobox(self):
-        print("load_classes_into_combobox called")  # برای تست
-        self.ui.class_comboBox.clear()
 
+    def load_classes_into_combobox(self, combobox: QComboBox):
+        print(f"{__name__} load_classes_into_combobox called")  # برای تست
+
+        combobox.clear()
         class_list = self.class_model.get_all_classes()
         for _, _, _, class_name in class_list:
-            self.ui.class_comboBox.addItem(class_name)
+            combobox.addItem(class_name)

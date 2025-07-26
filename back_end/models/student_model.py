@@ -25,13 +25,32 @@ class StudentModel:
 
     def add_student(self, student_id, first_name, last_name, father_name, class_id, parent_phone):
         try:
-            with self.conn:
-                self.conn.execute('''
-                    INSERT INTO Student (student_id, first_name, last_name, father_name, class_id, parent_phone)
-                    VALUES (?, ?, ?, ?, ?, ?)
-                ''', (student_id, first_name, last_name, father_name, class_id, parent_phone))
+            cursor = self.conn.cursor()
+            cursor.execute("""
+                INSERT INTO Student (student_id, first_name, last_name, father_name, class_id, parent_phone)
+                VALUES (?, ?, ?, ?, ?, ?)
+            """, (student_id, first_name, last_name, father_name, class_id, parent_phone))
+            self.conn.commit()
+            return cursor.rowcount > 0  # اگر سطری درج شده باشد، True برمی‌گردد
         except Exception as e:
-            print(f"[!] Error adding student: {e}")
+            print(f"خطا در add_student: {e}")
+            return False
+        
+
+    def update_student(self, student_id, first_name, last_name, father_name, class_id, parent_phone):
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute("""
+                UPDATE Student
+                SET first_name = ?, last_name = ?, father_name = ?, class_id = ?, parent_phone = ?
+                WHERE student_id = ?
+            """, (first_name, last_name, father_name, class_id, parent_phone, student_id))
+            self.conn.commit()
+            return cursor.rowcount > 0
+        except Exception as e:
+            print(f"خطا در update_student: {e}")
+            return False
+
 
     def get_all_students(self):
         try:
@@ -41,6 +60,39 @@ class StudentModel:
         except Exception as e:
             print(f"[!] Error fetching students: {e}")
             return []
+    def search_students(self, first_name=None, last_name=None, student_id=None):
+        try:
+            cursor = self.conn.cursor()
+            query = "SELECT * FROM Student WHERE 1=1"
+            params = []
+
+            if first_name:
+                query += " AND first_name LIKE ?"
+                params.append(f"%{first_name}%")
+
+            if last_name:
+                query += " AND last_name LIKE ?"
+                params.append(f"%{last_name}%")
+
+            if student_id:
+                query += " AND student_id LIKE ?"
+                params.append(f"%{student_id}%")
+
+            cursor.execute(query, params)
+            return cursor.fetchall()
+        except Exception as e:
+            print(f"[!] Error searching students: {e}")
+            return []
+        
+    def get_students_by_class(self, class_id):
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute("SELECT * FROM Student WHERE class_id = ?", (class_id,))
+            return cursor.fetchall()
+        except Exception as e:
+            print(f"[!] Error in get_students_by_class: {e}")
+            return []
+
 
     def __del__(self):
         if self.conn:

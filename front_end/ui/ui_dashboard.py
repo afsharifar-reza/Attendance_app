@@ -19,7 +19,8 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QFormLayout, QFrame,
     QHBoxLayout, QHeaderView, QLabel, QLineEdit,
     QMainWindow, QMenuBar, QPushButton, QSizePolicy,
     QSpacerItem, QStackedWidget, QStatusBar, QTabWidget,
-    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+    QTableView, QTableWidget, QTableWidgetItem, QVBoxLayout,
+    QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -368,37 +369,30 @@ class Ui_MainWindow(object):
         self.widget_7 = QWidget(self.tab)
         self.widget_7.setObjectName(u"widget_7")
         self.widget_7.setMinimumSize(QSize(0, 40))
+        self.widget_7.setLayoutDirection(Qt.LeftToRight)
         self.widget_7.setAutoFillBackground(True)
         self.horizontalLayout_7 = QHBoxLayout(self.widget_7)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.label_11 = QLabel(self.widget_7)
-        self.label_11.setObjectName(u"label_11")
-        self.label_11.setMinimumSize(QSize(75, 40))
-        self.label_11.setMaximumSize(QSize(80, 40))
-        self.label_11.setStyleSheet(u"QLabel{\n"
-" background-color: #ffffff;\n"
-"  border: 1px solid #795548; /* \u06a9\u0627\u062f\u0631 \u062f\u0648\u0631 \u0641\u0631\u06cc\u0645 (\u0636\u062e\u0627\u0645\u062a 2px \u0648 \u0631\u0646\u06af \u0642\u0647\u0648\u0647\u200c\u0627\u06cc) */\n"
-"  padding:5 px;\n"
-"  border-radius: 10px; /* \u0644\u0628\u0647\u200c\u0647\u0627\u06cc \u06af\u0631\u062f */\n"
-"  text-align:center;\n"
-"  font-family: \"B Nazanin\";\n"
-"  font-size: 15px;\n"
-"  font-weight: bold;\n"
-"}")
-        self.label_11.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.sub_btn = QPushButton(self.widget_7)
+        self.sub_btn.setObjectName(u"sub_btn")
 
-        self.horizontalLayout_7.addWidget(self.label_11)
+        self.horizontalLayout_7.addWidget(self.sub_btn)
 
-        self.Grade_comboBox = QComboBox(self.widget_7)
-        self.Grade_comboBox.addItem("")
-        self.Grade_comboBox.addItem("")
-        self.Grade_comboBox.addItem("")
-        self.Grade_comboBox.setObjectName(u"Grade_comboBox")
-        self.Grade_comboBox.setMinimumSize(QSize(0, 40))
-        self.Grade_comboBox.setLayoutDirection(Qt.RightToLeft)
-        self.Grade_comboBox.setStyleSheet(u"")
+        self.Field_comboBox = QComboBox(self.widget_7)
+        self.Field_comboBox.addItem("")
+        self.Field_comboBox.addItem("")
+        self.Field_comboBox.addItem("")
+        self.Field_comboBox.addItem("")
+        self.Field_comboBox.setObjectName(u"Field_comboBox")
+        self.Field_comboBox.setMinimumSize(QSize(90, 40))
+        self.Field_comboBox.setMaximumSize(QSize(90, 16777215))
+        self.Field_comboBox.setLayoutDirection(Qt.RightToLeft)
+        self.Field_comboBox.setAutoFillBackground(True)
+        self.Field_comboBox.setStyleSheet(u"")
+        self.Field_comboBox.setSizeAdjustPolicy(QComboBox.AdjustToContents)
+        self.Field_comboBox.setFrame(False)
 
-        self.horizontalLayout_7.addWidget(self.Grade_comboBox)
+        self.horizontalLayout_7.addWidget(self.Field_comboBox)
 
         self.label = QLabel(self.widget_7)
         self.label.setObjectName(u"label")
@@ -418,22 +412,36 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_7.addWidget(self.label)
 
-        self.Field_comboBox = QComboBox(self.widget_7)
-        self.Field_comboBox.addItem("")
-        self.Field_comboBox.addItem("")
-        self.Field_comboBox.addItem("")
-        self.Field_comboBox.addItem("")
-        self.Field_comboBox.setObjectName(u"Field_comboBox")
-        self.Field_comboBox.setMinimumSize(QSize(0, 40))
-        self.Field_comboBox.setAutoFillBackground(True)
-        self.Field_comboBox.setStyleSheet(u"")
+        self.Grade_comboBox = QComboBox(self.widget_7)
+        self.Grade_comboBox.addItem("")
+        self.Grade_comboBox.addItem("")
+        self.Grade_comboBox.addItem("")
+        self.Grade_comboBox.setObjectName(u"Grade_comboBox")
+        self.Grade_comboBox.setMinimumSize(QSize(50, 40))
+        self.Grade_comboBox.setMaximumSize(QSize(50, 16777215))
+        self.Grade_comboBox.setLayoutDirection(Qt.RightToLeft)
+        self.Grade_comboBox.setStyleSheet(u"")
+        self.Grade_comboBox.setFrame(False)
 
-        self.horizontalLayout_7.addWidget(self.Field_comboBox)
+        self.horizontalLayout_7.addWidget(self.Grade_comboBox)
 
-        self.sub_btn = QPushButton(self.widget_7)
-        self.sub_btn.setObjectName(u"sub_btn")
+        self.label_11 = QLabel(self.widget_7)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setMinimumSize(QSize(75, 40))
+        self.label_11.setMaximumSize(QSize(80, 40))
+        self.label_11.setStyleSheet(u"QLabel{\n"
+" background-color: #ffffff;\n"
+"  border: 1px solid #795548; /* \u06a9\u0627\u062f\u0631 \u062f\u0648\u0631 \u0641\u0631\u06cc\u0645 (\u0636\u062e\u0627\u0645\u062a 2px \u0648 \u0631\u0646\u06af \u0642\u0647\u0648\u0647\u200c\u0627\u06cc) */\n"
+"  padding:5 px;\n"
+"  border-radius: 10px; /* \u0644\u0628\u0647\u200c\u0647\u0627\u06cc \u06af\u0631\u062f */\n"
+"  text-align:center;\n"
+"  font-family: \"B Nazanin\";\n"
+"  font-size: 15px;\n"
+"  font-weight: bold;\n"
+"}")
+        self.label_11.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.horizontalLayout_7.addWidget(self.sub_btn)
+        self.horizontalLayout_7.addWidget(self.label_11)
 
 
         self.horizontalLayout_12.addWidget(self.widget_7)
@@ -449,6 +457,7 @@ class Ui_MainWindow(object):
 
         self.frame_2 = QFrame(self.tab_2)
         self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setLayoutDirection(Qt.RightToLeft)
         self.frame_2.setFrameShape(QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Raised)
         self.verticalLayout_4 = QVBoxLayout(self.frame_2)
@@ -645,42 +654,38 @@ class Ui_MainWindow(object):
         self.class_comboBox.addItem("")
         self.class_comboBox.setObjectName(u"class_comboBox")
         self.class_comboBox.setMinimumSize(QSize(202, 32))
+        self.class_comboBox.setMaximumSize(QSize(16777215, 16777215))
         self.class_comboBox.setLayoutDirection(Qt.RightToLeft)
+        self.class_comboBox.setAutoFillBackground(False)
         self.class_comboBox.setStyleSheet(u"QComboBox {\n"
-"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a */\n"
 "    font-family: \"B Nazanin\", \"Segoe UI\", Arial;\n"
 "    font-size: 13px;\n"
 "    color: #495057;\n"
-"    \n"
-"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0638\u0627\u0647\u0631\u06cc */\n"
+"\n"
 "    background-color: #ffffff;\n"
 "    border: 1px solid #ced4da;\n"
 "    border-radius: 4px;\n"
-"  \n"
+"\n"
 "    min-width: 200px;\n"
 "    min-height: 30px;\n"
-"    \n"
-"    /* \u062a\u0631\u0627\u0632 \u0645\u062a\u0646 \u0628\u0631\u0627\u06cc \u0641\u0627\u0631\u0633\u06cc - \u0631\u0627\u0647 \u062d\u0644 \u0627\u0635\u0644\u06cc */\n"
-"    text-align: right;\n"
-"    direction: rtl;\n"
+"\n"
+"    qproperty-layoutDirection: RightToLeft;\n"
 "}\n"
 "\n"
-"/* \u0631\u0627\u0647\u06a9\u0627\u0631 \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646 \u0628\u0631\u0627\u06cc \u062a\u0631\u0627\u0632 \u0645\u062a\u0646 */\n"
 "QComboBox QAbstractItemView {\n"
-"    text-align: right;\n"
-"    direction: rtl;\n"
+"    qproperty-layoutDirection: RightToLeft;\n"
+"    text-align: right; /* \u0642\u0627\u0628\u0644 \u0686\u0634\u0645\u200c\u067e\u0648\u0634\u06cc\u060c \u062a\u0632\u0626\u06cc\u0646\u06cc */\n"
 "}\n"
 "\n"
-"/* \u0639\u0646\u0635\u0631 \u0645\u062a\u0646 \u062f\u0627\u062e\u0644"
-                        " \u06a9\u0627\u0645\u0628\u0648\u0628\u0627\u06a9\u0633 */\n"
 "QComboBox QLineEdit {\n"
-"    text-align: right;\n"
+"    qproperty-alignment: 'AlignRight';\n"
 "    padding-right: 5px;\n"
-"    direction: rtl;\n"
-"}")
+"}\n"
+"")
         self.class_comboBox.setMaxCount(2147483646)
         self.class_comboBox.setInsertPolicy(QComboBox.InsertAtBottom)
         self.class_comboBox.setSizeAdjustPolicy(QComboBox.AdjustToContents)
+        self.class_comboBox.setFrame(True)
 
         self.formLayout.setWidget(4, QFormLayout.ItemRole.FieldRole, self.class_comboBox)
 
@@ -762,11 +767,727 @@ class Ui_MainWindow(object):
         self.mange_tab.addTab(self.tab_2, "")
         self.tab_3 = QWidget()
         self.tab_3.setObjectName(u"tab_3")
+        self.verticalLayout_7 = QVBoxLayout(self.tab_3)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.horizontalLayout_13 = QHBoxLayout()
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.label_18 = QLabel(self.tab_3)
+        self.label_18.setObjectName(u"label_18")
+        self.label_18.setMinimumSize(QSize(80, 0))
+        self.label_18.setMaximumSize(QSize(80, 16777215))
+        self.label_18.setLayoutDirection(Qt.LeftToRight)
+        self.label_18.setStyleSheet(u"QLabel{\n"
+" background-color: #ffffff;\n"
+"  border: 1px solid #795548; /* \u06a9\u0627\u062f\u0631 \u062f\u0648\u0631 \u0641\u0631\u06cc\u0645 (\u0636\u062e\u0627\u0645\u062a 2px \u0648 \u0631\u0646\u06af \u0642\u0647\u0648\u0647\u200c\u0627\u06cc) */\n"
+"  padding:5 px;\n"
+"  border-radius: 10px; /* \u0644\u0628\u0647\u200c\u0647\u0627\u06cc \u06af\u0631\u062f */\n"
+"  text-align:center;\n"
+"  font-family: \"B Nazanin\";\n"
+"  font-size: 15px;\n"
+"  font-weight: bold;\n"
+"}")
+        self.label_18.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.horizontalLayout_13.addWidget(self.label_18)
+
+        self.nationalCodeSearchLineEdit = QLineEdit(self.tab_3)
+        self.nationalCodeSearchLineEdit.setObjectName(u"nationalCodeSearchLineEdit")
+        self.nationalCodeSearchLineEdit.setStyleSheet(u"QLineEdit {\n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a \u0648 \u0645\u062a\u0646 */\n"
+"    font-family: \"Segoe UI\", \"B Nazanin\", \"Arial\";\n"
+"    font-size: 12px;\n"
+"    color: #495057;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u062d\u0627\u0634\u06cc\u0647 \u0648 \u0641\u0627\u0635\u0644\u0647 */\n"
+"    padding: 6px 8px;\n"
+"    margin: 2px;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0638\u0627\u0647\u0631\u06cc */\n"
+"    background-color: #ffffff;\n"
+"    border: 1px solid #ced4da;\n"
+"    border-radius: 4px;\n"
+"    \n"
+"    /* \u062c\u0644\u0648\u0647\u200c\u0647\u0627\u06cc \u0648\u06cc\u0698\u0647 */\n"
+"    selection-background-color: #007bff;\n"
+"    selection-color: #ffffff;\n"
+"}")
+
+        self.horizontalLayout_13.addWidget(self.nationalCodeSearchLineEdit)
+
+        self.label_19 = QLabel(self.tab_3)
+        self.label_19.setObjectName(u"label_19")
+        self.label_19.setMinimumSize(QSize(70, 0))
+        self.label_19.setMaximumSize(QSize(70, 16777215))
+        self.label_19.setLayoutDirection(Qt.LeftToRight)
+        self.label_19.setStyleSheet(u"QLabel{\n"
+" background-color: #ffffff;\n"
+"  border: 1px solid #795548; /* \u06a9\u0627\u062f\u0631 \u062f\u0648\u0631 \u0641\u0631\u06cc\u0645 (\u0636\u062e\u0627\u0645\u062a 2px \u0648 \u0631\u0646\u06af \u0642\u0647\u0648\u0647\u200c\u0627\u06cc) */\n"
+"  padding:5 px;\n"
+"  border-radius: 10px; /* \u0644\u0628\u0647\u200c\u0647\u0627\u06cc \u06af\u0631\u062f */\n"
+"  text-align:center;\n"
+"  font-family: \"B Nazanin\";\n"
+"  font-size: 15px;\n"
+"  font-weight: bold;\n"
+"}")
+        self.label_19.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.horizontalLayout_13.addWidget(self.label_19)
+
+        self.firstNameSearchLineEdit = QLineEdit(self.tab_3)
+        self.firstNameSearchLineEdit.setObjectName(u"firstNameSearchLineEdit")
+        self.firstNameSearchLineEdit.setStyleSheet(u"QLineEdit {\n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a \u0648 \u0645\u062a\u0646 */\n"
+"    font-family: \"Segoe UI\", \"B Nazanin\", \"Arial\";\n"
+"    font-size: 12px;\n"
+"    color: #495057;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u062d\u0627\u0634\u06cc\u0647 \u0648 \u0641\u0627\u0635\u0644\u0647 */\n"
+"    padding: 6px 8px;\n"
+"    margin: 2px;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0638\u0627\u0647\u0631\u06cc */\n"
+"    background-color: #ffffff;\n"
+"    border: 1px solid #ced4da;\n"
+"    border-radius: 4px;\n"
+"    \n"
+"    /* \u062c\u0644\u0648\u0647\u200c\u0647\u0627\u06cc \u0648\u06cc\u0698\u0647 */\n"
+"    selection-background-color: #007bff;\n"
+"    selection-color: #ffffff;\n"
+"}")
+        self.firstNameSearchLineEdit.setMaxLength(32765)
+
+        self.horizontalLayout_13.addWidget(self.firstNameSearchLineEdit)
+
+        self.label_20 = QLabel(self.tab_3)
+        self.label_20.setObjectName(u"label_20")
+        self.label_20.setMinimumSize(QSize(120, 0))
+        self.label_20.setMaximumSize(QSize(120, 16777215))
+        self.label_20.setStyleSheet(u"QLabel{\n"
+" background-color: #ffffff;\n"
+"  border: 1px solid #795548; /* \u06a9\u0627\u062f\u0631 \u062f\u0648\u0631 \u0641\u0631\u06cc\u0645 (\u0636\u062e\u0627\u0645\u062a 2px \u0648 \u0631\u0646\u06af \u0642\u0647\u0648\u0647\u200c\u0627\u06cc) */\n"
+"  padding:5 px;\n"
+"  border-radius: 10px; /* \u0644\u0628\u0647\u200c\u0647\u0627\u06cc \u06af\u0631\u062f */\n"
+"  text-align:center;\n"
+"  font-family: \"B Nazanin\";\n"
+"  font-size: 15px;\n"
+"  font-weight: bold;\n"
+"}")
+        self.label_20.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.horizontalLayout_13.addWidget(self.label_20)
+
+        self.lastNameSearchLineEdit = QLineEdit(self.tab_3)
+        self.lastNameSearchLineEdit.setObjectName(u"lastNameSearchLineEdit")
+        self.lastNameSearchLineEdit.setStyleSheet(u"QLineEdit {\n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a \u0648 \u0645\u062a\u0646 */\n"
+"    font-family: \"Segoe UI\", \"B Nazanin\", \"Arial\";\n"
+"    font-size: 12px;\n"
+"    color: #495057;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u062d\u0627\u0634\u06cc\u0647 \u0648 \u0641\u0627\u0635\u0644\u0647 */\n"
+"    padding: 6px 8px;\n"
+"    margin: 2px;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0638\u0627\u0647\u0631\u06cc */\n"
+"    background-color: #ffffff;\n"
+"    border: 1px solid #ced4da;\n"
+"    border-radius: 4px;\n"
+"    \n"
+"    /* \u062c\u0644\u0648\u0647\u200c\u0647\u0627\u06cc \u0648\u06cc\u0698\u0647 */\n"
+"    selection-background-color: #007bff;\n"
+"    selection-color: #ffffff;\n"
+"}")
+        self.lastNameSearchLineEdit.setMaxLength(32765)
+
+        self.horizontalLayout_13.addWidget(self.lastNameSearchLineEdit)
+
+        self.searchButton = QPushButton(self.tab_3)
+        self.searchButton.setObjectName(u"searchButton")
+
+        self.horizontalLayout_13.addWidget(self.searchButton)
+
+
+        self.verticalLayout_7.addLayout(self.horizontalLayout_13)
+
+        self.verticalLayout_5 = QVBoxLayout()
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.studentTableView = QTableView(self.tab_3)
+        self.studentTableView.setObjectName(u"studentTableView")
+        self.studentTableView.setStyleSheet(u"/* \u0627\u0633\u062a\u0627\u06cc\u0644 \u067e\u0627\u06cc\u0647 \u0628\u0631\u0627\u06cc \u062c\u062f\u0648\u0644 */\n"
+"QTableView {\n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0638\u0627\u0647\u0631\u06cc */\n"
+"    background-color: #ffffff;\n"
+"    border: 1px solid #e0e0e0;\n"
+"    border-radius: 4px;\n"
+"    gridline-color: #f0f0f0;\n"
+"    outline: 0;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a */\n"
+"    font-family: \"Segoe UI\", Arial, sans-serif;\n"
+"    font-size: 12px;\n"
+"    color: #333333;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0627\u0646\u062a\u062e\u0627\u0628 */\n"
+"    selection-background-color: #4a90e2;\n"
+"    selection-color: #ffffff;\n"
+"    alternate-background-color: #f8f9fa;\n"
+"}\n"
+"\n"
+"/* \u0627\u0633\u062a\u0627\u06cc\u0644 \u0647\u062f\u0631\u0647\u0627\u06cc \u0639\u0645\u0648\u062f\u06cc */\n"
+"QHeaderView::section:vertical {\n"
+"    background-color: #f8f9fa;\n"
+"    color: #495057;\n"
+"    p"
+                        "adding: 8px;\n"
+"    border: none;\n"
+"    font-weight: 500;\n"
+"}\n"
+"\n"
+"/* \u0627\u0633\u062a\u0627\u06cc\u0644 \u0647\u062f\u0631\u0647\u0627\u06cc \u0627\u0641\u0642\u06cc */\n"
+"QHeaderView::section:horizontal {\n"
+"    background-color: #f8f9fa;\n"
+"    color: #495057;\n"
+"    padding: 8px;\n"
+"    border: none;\n"
+"    border-bottom: 1px solid #dee2e6;\n"
+"    font-weight: 500;\n"
+"}\n"
+"\n"
+"/* \u0627\u0641\u06a9\u062a hover \u0631\u0648\u06cc \u0647\u062f\u0631\u0647\u0627 */\n"
+"QHeaderView::section:hover {\n"
+"    background-color: #e9ecef;\n"
+"}\n"
+"\n"
+"/* \u0627\u0633\u062a\u0627\u06cc\u0644 \u06af\u0648\u0634\u0647 \u062c\u062f\u0648\u0644 */\n"
+"QTableCornerButton::section {\n"
+"    background-color: #f8f9fa;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"/* \u0627\u0633\u062a\u0627\u06cc\u0644 \u0633\u0637\u0631\u0647\u0627\u06cc \u0645\u062a\u0646\u0627\u0648\u0628 */\n"
+"QTableView {\n"
+"    alternate-background-color: #f8f9fa;\n"
+"}\n"
+"\n"
+"/* \u0627\u0633\u062a\u0627\u06cc\u0644 \u0622\u06cc\u062a"
+                        "\u0645\u200c\u0647\u0627 */\n"
+"QTableView::item {\n"
+"    padding: 6px;\n"
+"    border-bottom: 1px solid #f0f0f0;\n"
+"}\n"
+"\n"
+"/* \u0627\u0633\u062a\u0627\u06cc\u0644 \u0627\u0633\u06a9\u0631\u0648\u0644 \u0628\u0627\u0631\u0647\u0627 */\n"
+"QScrollBar:vertical {\n"
+"    border: none;\n"
+"    background: #f8f9fa;\n"
+"    width: 10px;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:vertical {\n"
+"    background: #ced4da;\n"
+"    min-height: 20px;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"\n"
+"QScrollBar:horizontal {\n"
+"    border: none;\n"
+"    background: #f8f9fa;\n"
+"    height: 10px;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:horizontal {\n"
+"    background: #ced4da;\n"
+"    min-width: 20px;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"\n"
+"/* \u0627\u0633\u062a\u0627\u06cc\u0644 \u062d\u0627\u0644\u062a \u0641\u0648\u06a9\u0648\u0633 */\n"
+"QTableView::item:focus {\n"
+"    border: 1px solid #80bdff;\n"
+"    background: rgba(0, 123, 255, 0.1);\n"
+"}")
+        self.studentTableView.horizontalHeader().setCascadingSectionResizes(False)
+        self.studentTableView.horizontalHeader().setDefaultSectionSize(120)
+        self.studentTableView.horizontalHeader().setStretchLastSection(True)
+        self.studentTableView.verticalHeader().setStretchLastSection(False)
+
+        self.verticalLayout_5.addWidget(self.studentTableView)
+
+
+        self.verticalLayout_7.addLayout(self.verticalLayout_5)
+
+        self.frame_3 = QFrame(self.tab_3)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setLayoutDirection(Qt.RightToLeft)
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_6 = QVBoxLayout(self.frame_3)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.formLayout_3 = QFormLayout()
+        self.formLayout_3.setObjectName(u"formLayout_3")
+        self.label_21 = QLabel(self.frame_3)
+        self.label_21.setObjectName(u"label_21")
+        self.label_21.setMinimumSize(QSize(150, 0))
+        self.label_21.setMaximumSize(QSize(150, 16777215))
+        self.label_21.setLayoutDirection(Qt.LeftToRight)
+        self.label_21.setStyleSheet(u"QLabel{\n"
+" background-color: #ffffff;\n"
+"  border: 1px solid #795548; /* \u06a9\u0627\u062f\u0631 \u062f\u0648\u0631 \u0641\u0631\u06cc\u0645 (\u0636\u062e\u0627\u0645\u062a 2px \u0648 \u0631\u0646\u06af \u0642\u0647\u0648\u0647\u200c\u0627\u06cc) */\n"
+"  padding:5 px;\n"
+"  border-radius: 10px; /* \u0644\u0628\u0647\u200c\u0647\u0627\u06cc \u06af\u0631\u062f */\n"
+"  text-align:center;\n"
+"  font-family: \"B Nazanin\";\n"
+"  font-size: 15px;\n"
+"  font-weight: bold;\n"
+"}")
+        self.label_21.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.formLayout_3.setWidget(0, QFormLayout.ItemRole.LabelRole, self.label_21)
+
+        self.nationalCodeEditLineEdit = QLineEdit(self.frame_3)
+        self.nationalCodeEditLineEdit.setObjectName(u"nationalCodeEditLineEdit")
+        self.nationalCodeEditLineEdit.setStyleSheet(u"QLineEdit {\n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a \u0648 \u0645\u062a\u0646 */\n"
+"    font-family: \"Segoe UI\", \"B Nazanin\", \"Arial\";\n"
+"    font-size: 12px;\n"
+"    color: #495057;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u062d\u0627\u0634\u06cc\u0647 \u0648 \u0641\u0627\u0635\u0644\u0647 */\n"
+"    padding: 6px 8px;\n"
+"    margin: 2px;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0638\u0627\u0647\u0631\u06cc */\n"
+"    background-color: #ffffff;\n"
+"    border: 1px solid #ced4da;\n"
+"    border-radius: 4px;\n"
+"    \n"
+"    /* \u062c\u0644\u0648\u0647\u200c\u0647\u0627\u06cc \u0648\u06cc\u0698\u0647 */\n"
+"    selection-background-color: #007bff;\n"
+"    selection-color: #ffffff;\n"
+"}")
+        self.nationalCodeEditLineEdit.setMaxLength(32765)
+
+        self.formLayout_3.setWidget(0, QFormLayout.ItemRole.FieldRole, self.nationalCodeEditLineEdit)
+
+        self.label_22 = QLabel(self.frame_3)
+        self.label_22.setObjectName(u"label_22")
+        self.label_22.setMinimumSize(QSize(150, 0))
+        self.label_22.setMaximumSize(QSize(150, 16777215))
+        self.label_22.setLayoutDirection(Qt.LeftToRight)
+        self.label_22.setStyleSheet(u"QLabel{\n"
+" background-color: #ffffff;\n"
+"  border: 1px solid #795548; /* \u06a9\u0627\u062f\u0631 \u062f\u0648\u0631 \u0641\u0631\u06cc\u0645 (\u0636\u062e\u0627\u0645\u062a 2px \u0648 \u0631\u0646\u06af \u0642\u0647\u0648\u0647\u200c\u0627\u06cc) */\n"
+"  padding:5 px;\n"
+"  border-radius: 10px; /* \u0644\u0628\u0647\u200c\u0647\u0627\u06cc \u06af\u0631\u062f */\n"
+"  text-align:center;\n"
+"  font-family: \"B Nazanin\";\n"
+"  font-size: 15px;\n"
+"  font-weight: bold;\n"
+"}")
+        self.label_22.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.formLayout_3.setWidget(1, QFormLayout.ItemRole.LabelRole, self.label_22)
+
+        self.firstNameEditLineEdit = QLineEdit(self.frame_3)
+        self.firstNameEditLineEdit.setObjectName(u"firstNameEditLineEdit")
+        self.firstNameEditLineEdit.setStyleSheet(u"QLineEdit {\n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a \u0648 \u0645\u062a\u0646 */\n"
+"    font-family: \"Segoe UI\", \"B Nazanin\", \"Arial\";\n"
+"    font-size: 12px;\n"
+"    color: #495057;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u062d\u0627\u0634\u06cc\u0647 \u0648 \u0641\u0627\u0635\u0644\u0647 */\n"
+"    padding: 6px 8px;\n"
+"    margin: 2px;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0638\u0627\u0647\u0631\u06cc */\n"
+"    background-color: #ffffff;\n"
+"    border: 1px solid #ced4da;\n"
+"    border-radius: 4px;\n"
+"    \n"
+"    /* \u062c\u0644\u0648\u0647\u200c\u0647\u0627\u06cc \u0648\u06cc\u0698\u0647 */\n"
+"    selection-background-color: #007bff;\n"
+"    selection-color: #ffffff;\n"
+"}")
+
+        self.formLayout_3.setWidget(1, QFormLayout.ItemRole.FieldRole, self.firstNameEditLineEdit)
+
+        self.label_23 = QLabel(self.frame_3)
+        self.label_23.setObjectName(u"label_23")
+        self.label_23.setMinimumSize(QSize(150, 0))
+        self.label_23.setMaximumSize(QSize(150, 16777215))
+        self.label_23.setStyleSheet(u"QLabel{\n"
+" background-color: #ffffff;\n"
+"  border: 1px solid #795548; /* \u06a9\u0627\u062f\u0631 \u062f\u0648\u0631 \u0641\u0631\u06cc\u0645 (\u0636\u062e\u0627\u0645\u062a 2px \u0648 \u0631\u0646\u06af \u0642\u0647\u0648\u0647\u200c\u0627\u06cc) */\n"
+"  padding:5 px;\n"
+"  border-radius: 10px; /* \u0644\u0628\u0647\u200c\u0647\u0627\u06cc \u06af\u0631\u062f */\n"
+"  text-align:center;\n"
+"  font-family: \"B Nazanin\";\n"
+"  font-size: 15px;\n"
+"  font-weight: bold;\n"
+"}")
+        self.label_23.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.formLayout_3.setWidget(2, QFormLayout.ItemRole.LabelRole, self.label_23)
+
+        self.lastNameEditLineEdit = QLineEdit(self.frame_3)
+        self.lastNameEditLineEdit.setObjectName(u"lastNameEditLineEdit")
+        self.lastNameEditLineEdit.setStyleSheet(u"QLineEdit {\n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a \u0648 \u0645\u062a\u0646 */\n"
+"    font-family: \"Segoe UI\", \"B Nazanin\", \"Arial\";\n"
+"    font-size: 12px;\n"
+"    color: #495057;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u062d\u0627\u0634\u06cc\u0647 \u0648 \u0641\u0627\u0635\u0644\u0647 */\n"
+"    padding: 6px 8px;\n"
+"    margin: 2px;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0638\u0627\u0647\u0631\u06cc */\n"
+"    background-color: #ffffff;\n"
+"    border: 1px solid #ced4da;\n"
+"    border-radius: 4px;\n"
+"    \n"
+"    /* \u062c\u0644\u0648\u0647\u200c\u0647\u0627\u06cc \u0648\u06cc\u0698\u0647 */\n"
+"    selection-background-color: #007bff;\n"
+"    selection-color: #ffffff;\n"
+"}")
+
+        self.formLayout_3.setWidget(2, QFormLayout.ItemRole.FieldRole, self.lastNameEditLineEdit)
+
+        self.label_24 = QLabel(self.frame_3)
+        self.label_24.setObjectName(u"label_24")
+        self.label_24.setMinimumSize(QSize(150, 0))
+        self.label_24.setMaximumSize(QSize(150, 16777215))
+        self.label_24.setLayoutDirection(Qt.LeftToRight)
+        self.label_24.setStyleSheet(u"QLabel{\n"
+" background-color: #ffffff;\n"
+"  border: 1px solid #795548; /* \u06a9\u0627\u062f\u0631 \u062f\u0648\u0631 \u0641\u0631\u06cc\u0645 (\u0636\u062e\u0627\u0645\u062a 2px \u0648 \u0631\u0646\u06af \u0642\u0647\u0648\u0647\u200c\u0627\u06cc) */\n"
+"  padding:5 px;\n"
+"  border-radius: 10px; /* \u0644\u0628\u0647\u200c\u0647\u0627\u06cc \u06af\u0631\u062f */\n"
+"  text-align:center;\n"
+"  font-family: \"B Nazanin\";\n"
+"  font-size: 15px;\n"
+"  font-weight: bold;\n"
+"}")
+        self.label_24.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.formLayout_3.setWidget(3, QFormLayout.ItemRole.LabelRole, self.label_24)
+
+        self.fatherNameEditLineEdit = QLineEdit(self.frame_3)
+        self.fatherNameEditLineEdit.setObjectName(u"fatherNameEditLineEdit")
+        self.fatherNameEditLineEdit.setStyleSheet(u"QLineEdit {\n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a \u0648 \u0645\u062a\u0646 */\n"
+"    font-family: \"Segoe UI\", \"B Nazanin\", \"Arial\";\n"
+"    font-size: 12px;\n"
+"    color: #495057;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u062d\u0627\u0634\u06cc\u0647 \u0648 \u0641\u0627\u0635\u0644\u0647 */\n"
+"    padding: 6px 8px;\n"
+"    margin: 2px;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0638\u0627\u0647\u0631\u06cc */\n"
+"    background-color: #ffffff;\n"
+"    border: 1px solid #ced4da;\n"
+"    border-radius: 4px;\n"
+"    \n"
+"    /* \u062c\u0644\u0648\u0647\u200c\u0647\u0627\u06cc \u0648\u06cc\u0698\u0647 */\n"
+"    selection-background-color: #007bff;\n"
+"    selection-color: #ffffff;\n"
+"}")
+
+        self.formLayout_3.setWidget(3, QFormLayout.ItemRole.FieldRole, self.fatherNameEditLineEdit)
+
+        self.label_25 = QLabel(self.frame_3)
+        self.label_25.setObjectName(u"label_25")
+        self.label_25.setMinimumSize(QSize(150, 0))
+        self.label_25.setMaximumSize(QSize(150, 16777215))
+        self.label_25.setLayoutDirection(Qt.LeftToRight)
+        self.label_25.setStyleSheet(u"QLabel{\n"
+" background-color: #ffffff;\n"
+"  border: 1px solid #795548; /* \u06a9\u0627\u062f\u0631 \u062f\u0648\u0631 \u0641\u0631\u06cc\u0645 (\u0636\u062e\u0627\u0645\u062a 2px \u0648 \u0631\u0646\u06af \u0642\u0647\u0648\u0647\u200c\u0627\u06cc) */\n"
+"  padding:5 px;\n"
+"  border-radius: 10px; /* \u0644\u0628\u0647\u200c\u0647\u0627\u06cc \u06af\u0631\u062f */\n"
+"  text-align:center;\n"
+"  font-family: \"B Nazanin\";\n"
+"  font-size: 15px;\n"
+"  font-weight: bold;\n"
+"}")
+        self.label_25.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.formLayout_3.setWidget(4, QFormLayout.ItemRole.LabelRole, self.label_25)
+
+        self.class_comboBox_2 = QComboBox(self.frame_3)
+        self.class_comboBox_2.addItem("")
+        self.class_comboBox_2.addItem("")
+        self.class_comboBox_2.setObjectName(u"class_comboBox_2")
+        self.class_comboBox_2.setMinimumSize(QSize(202, 32))
+        self.class_comboBox_2.setMaximumSize(QSize(16777215, 16777215))
+        self.class_comboBox_2.setLayoutDirection(Qt.RightToLeft)
+        self.class_comboBox_2.setAutoFillBackground(False)
+        self.class_comboBox_2.setStyleSheet(u"QComboBox {\n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a */\n"
+"    font-family: \"B Nazanin\", \"Segoe UI\", Arial;\n"
+"    font-size: 13px;\n"
+"    color: #495057;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0638\u0627\u0647\u0631\u06cc */\n"
+"    background-color: #ffffff;\n"
+"    border: 1px solid #ced4da;\n"
+"    border-radius: 4px;\n"
+"  \n"
+"    min-width: 200px;\n"
+"    min-height: 30px;\n"
+"    \n"
+"    /* \u062a\u0631\u0627\u0632 \u0645\u062a\u0646 \u0628\u0631\u0627\u06cc \u0641\u0627\u0631\u0633\u06cc - \u0631\u0627\u0647 \u062d\u0644 \u0627\u0635\u0644\u06cc */\n"
+"    text-align: right;\n"
+"    direction: rtl;\n"
+"}\n"
+"\n"
+"/* \u0631\u0627\u0647\u06a9\u0627\u0631 \u062c\u0627\u06cc\u06af\u0632\u06cc\u0646 \u0628\u0631\u0627\u06cc \u062a\u0631\u0627\u0632 \u0645\u062a\u0646 */\n"
+"QComboBox QAbstractItemView {\n"
+"    text-align: right;\n"
+"    direction: rtl;\n"
+"}\n"
+"\n"
+"/* \u0639\u0646\u0635\u0631 \u0645\u062a\u0646 \u062f\u0627\u062e\u0644"
+                        " \u06a9\u0627\u0645\u0628\u0648\u0628\u0627\u06a9\u0633 */\n"
+"QComboBox QLineEdit {\n"
+"    text-align: right;\n"
+"    padding-right: 5px;\n"
+"    direction: rtl;\n"
+"}")
+        self.class_comboBox_2.setMaxCount(2147483646)
+        self.class_comboBox_2.setInsertPolicy(QComboBox.InsertAtBottom)
+        self.class_comboBox_2.setSizeAdjustPolicy(QComboBox.AdjustToContents)
+        self.class_comboBox_2.setFrame(True)
+
+        self.formLayout_3.setWidget(4, QFormLayout.ItemRole.FieldRole, self.class_comboBox_2)
+
+        self.label_26 = QLabel(self.frame_3)
+        self.label_26.setObjectName(u"label_26")
+        self.label_26.setMinimumSize(QSize(150, 0))
+        self.label_26.setMaximumSize(QSize(150, 16777215))
+        self.label_26.setLayoutDirection(Qt.LeftToRight)
+        self.label_26.setStyleSheet(u"QLabel{\n"
+" background-color: #ffffff;\n"
+"  border: 1px solid #795548; /* \u06a9\u0627\u062f\u0631 \u062f\u0648\u0631 \u0641\u0631\u06cc\u0645 (\u0636\u062e\u0627\u0645\u062a 2px \u0648 \u0631\u0646\u06af \u0642\u0647\u0648\u0647\u200c\u0627\u06cc) */\n"
+"  padding:5 px;\n"
+"  border-radius: 10px; /* \u0644\u0628\u0647\u200c\u0647\u0627\u06cc \u06af\u0631\u062f */\n"
+"  text-align:center;\n"
+"  font-family: \"B Nazanin\";\n"
+"  font-size: 15px;\n"
+"  font-weight: bold;\n"
+"}")
+        self.label_26.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.formLayout_3.setWidget(5, QFormLayout.ItemRole.LabelRole, self.label_26)
+
+        self.phoneNumberEditLineEdit = QLineEdit(self.frame_3)
+        self.phoneNumberEditLineEdit.setObjectName(u"phoneNumberEditLineEdit")
+        self.phoneNumberEditLineEdit.setStyleSheet(u"QLineEdit {\n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0648\u0646\u062a \u0648 \u0645\u062a\u0646 */\n"
+"    font-family: \"Segoe UI\", \"B Nazanin\", \"Arial\";\n"
+"    font-size: 12px;\n"
+"    color: #495057;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u062d\u0627\u0634\u06cc\u0647 \u0648 \u0641\u0627\u0635\u0644\u0647 */\n"
+"    padding: 6px 8px;\n"
+"    margin: 2px;\n"
+"    \n"
+"    /* \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0638\u0627\u0647\u0631\u06cc */\n"
+"    background-color: #ffffff;\n"
+"    border: 1px solid #ced4da;\n"
+"    border-radius: 4px;\n"
+"    \n"
+"    /* \u062c\u0644\u0648\u0647\u200c\u0647\u0627\u06cc \u0648\u06cc\u0698\u0647 */\n"
+"    selection-background-color: #007bff;\n"
+"    selection-color: #ffffff;\n"
+"}")
+
+        self.formLayout_3.setWidget(5, QFormLayout.ItemRole.FieldRole, self.phoneNumberEditLineEdit)
+
+
+        self.verticalLayout_6.addLayout(self.formLayout_3)
+
+        self.widget_9 = QWidget(self.frame_3)
+        self.widget_9.setObjectName(u"widget_9")
+        self.horizontalLayout_14 = QHBoxLayout(self.widget_9)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.update_student_btn = QPushButton(self.widget_9)
+        self.update_student_btn.setObjectName(u"update_student_btn")
+
+        self.horizontalLayout_14.addWidget(self.update_student_btn)
+
+
+        self.verticalLayout_6.addWidget(self.widget_9)
+
+
+        self.verticalLayout_7.addWidget(self.frame_3)
+
         self.mange_tab.addTab(self.tab_3, "")
 
         self.horizontalLayout_8.addWidget(self.mange_tab)
 
         self.stackedWidget_dashboard.addWidget(self.mange_page)
+        self.attandance_page = QWidget()
+        self.attandance_page.setObjectName(u"attandance_page")
+        self.verticalLayout_8 = QVBoxLayout(self.attandance_page)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.horizontalLayout_15 = QHBoxLayout()
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.loadButton = QPushButton(self.attandance_page)
+        self.loadButton.setObjectName(u"loadButton")
+
+        self.horizontalLayout_15.addWidget(self.loadButton)
+
+        self.dateEdit = QLineEdit(self.attandance_page)
+        self.dateEdit.setObjectName(u"dateEdit")
+
+        self.horizontalLayout_15.addWidget(self.dateEdit)
+
+        self.label_28 = QLabel(self.attandance_page)
+        self.label_28.setObjectName(u"label_28")
+        self.label_28.setMinimumSize(QSize(100, 0))
+        self.label_28.setMaximumSize(QSize(100, 16777215))
+        self.label_28.setLayoutDirection(Qt.LeftToRight)
+        self.label_28.setStyleSheet(u"QLabel{\n"
+" background-color: #ffffff;\n"
+"  border: 1px solid #795548; /* \u06a9\u0627\u062f\u0631 \u062f\u0648\u0631 \u0641\u0631\u06cc\u0645 (\u0636\u062e\u0627\u0645\u062a 2px \u0648 \u0631\u0646\u06af \u0642\u0647\u0648\u0647\u200c\u0627\u06cc) */\n"
+"  padding:5 px;\n"
+"  border-radius: 10px; /* \u0644\u0628\u0647\u200c\u0647\u0627\u06cc \u06af\u0631\u062f */\n"
+"  text-align:center;\n"
+"  font-family: \"B Nazanin\";\n"
+"  font-size: 15px;\n"
+"  font-weight: bold;\n"
+"}")
+        self.label_28.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.horizontalLayout_15.addWidget(self.label_28)
+
+        self.class_comboBox_3 = QComboBox(self.attandance_page)
+        self.class_comboBox_3.addItem("")
+        self.class_comboBox_3.addItem("")
+        self.class_comboBox_3.setObjectName(u"class_comboBox_3")
+        self.class_comboBox_3.setMinimumSize(QSize(150, 0))
+        self.class_comboBox_3.setMaximumSize(QSize(16777215, 16777215))
+        self.class_comboBox_3.setLayoutDirection(Qt.RightToLeft)
+        self.class_comboBox_3.setAutoFillBackground(False)
+        self.class_comboBox_3.setStyleSheet(u"QComboBox {\n"
+"    font-family: \"B Nazanin\", \"Segoe UI\", Arial;\n"
+"    font-size: 13px;\n"
+"    color: #495057;\n"
+"\n"
+"    background-color: #ffffff;\n"
+"    border: 1px solid #ced4da;\n"
+"    border-radius: 4px;\n"
+"\n"
+"\n"
+"\n"
+"    qproperty-layoutDirection: RightToLeft;\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView {\n"
+"    qproperty-layoutDirection: RightToLeft;\n"
+"    text-align: right; /* \u0642\u0627\u0628\u0644 \u0686\u0634\u0645\u200c\u067e\u0648\u0634\u06cc\u060c \u062a\u0632\u0626\u06cc\u0646\u06cc */\n"
+"}\n"
+"\n"
+"QComboBox QLineEdit {\n"
+"    qproperty-alignment: 'AlignRight';\n"
+"    padding-right: 5px;\n"
+"}\n"
+"")
+        self.class_comboBox_3.setMaxCount(2147483646)
+        self.class_comboBox_3.setInsertPolicy(QComboBox.InsertAtBottom)
+        self.class_comboBox_3.setSizeAdjustPolicy(QComboBox.AdjustToContents)
+        self.class_comboBox_3.setFrame(True)
+
+        self.horizontalLayout_15.addWidget(self.class_comboBox_3)
+
+        self.label_27 = QLabel(self.attandance_page)
+        self.label_27.setObjectName(u"label_27")
+        self.label_27.setMinimumSize(QSize(100, 0))
+        self.label_27.setMaximumSize(QSize(100, 16777215))
+        self.label_27.setLayoutDirection(Qt.LeftToRight)
+        self.label_27.setStyleSheet(u"QLabel{\n"
+" background-color: #ffffff;\n"
+"  border: 1px solid #795548; /* \u06a9\u0627\u062f\u0631 \u062f\u0648\u0631 \u0641\u0631\u06cc\u0645 (\u0636\u062e\u0627\u0645\u062a 2px \u0648 \u0631\u0646\u06af \u0642\u0647\u0648\u0647\u200c\u0627\u06cc) */\n"
+"  padding:5 px;\n"
+"  border-radius: 10px; /* \u0644\u0628\u0647\u200c\u0647\u0627\u06cc \u06af\u0631\u062f */\n"
+"  text-align:center;\n"
+"  font-family: \"B Nazanin\";\n"
+"  font-size: 15px;\n"
+"  font-weight: bold;\n"
+"}")
+        self.label_27.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.horizontalLayout_15.addWidget(self.label_27)
+
+
+        self.verticalLayout_8.addLayout(self.horizontalLayout_15)
+
+        self.attendanceTableView = QTableView(self.attandance_page)
+        self.attendanceTableView.setObjectName(u"attendanceTableView")
+        self.attendanceTableView.setLayoutDirection(Qt.RightToLeft)
+        self.attendanceTableView.setStyleSheet(u"QTableView {\n"
+"    background-color: #ffffff;\n"
+"    gridline-color: #dee2e6;\n"
+"    font-family: \"B Nazanin\", \"Segoe UI\", Arial;\n"
+"    font-size: 13px;\n"
+"    color: #212529;\n"
+"    border: 1px solid #ced4da;\n"
+"    selection-background-color: #d0ebff;\n"
+"    selection-color: #000000;\n"
+"    alternate-background-color: #f8f9fa;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #f1f3f5;\n"
+"    padding: 6px;\n"
+"    border: 1px solid #dee2e6;\n"
+"    font-weight: bold;\n"
+"    font-size: 13px;\n"
+"    color: #343a40;\n"
+"    text-align: center;\n"
+"}\n"
+"\n"
+"QTableView::item {\n"
+"    padding: 4px;\n"
+"}\n"
+"\n"
+"QTableView::item:selected {\n"
+"    background-color: #d0ebff;\n"
+"    color: #000;\n"
+"}\n"
+"")
+
+        self.verticalLayout_8.addWidget(self.attendanceTableView)
+
+        self.horizontalLayout_16 = QHBoxLayout()
+        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
+        self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_16.addItem(self.horizontalSpacer_7)
+
+        self.cancelButton = QPushButton(self.attandance_page)
+        self.cancelButton.setObjectName(u"cancelButton")
+
+        self.horizontalLayout_16.addWidget(self.cancelButton)
+
+        self.saveButton = QPushButton(self.attandance_page)
+        self.saveButton.setObjectName(u"saveButton")
+
+        self.horizontalLayout_16.addWidget(self.saveButton)
+
+        self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_16.addItem(self.horizontalSpacer_8)
+
+
+        self.verticalLayout_8.addLayout(self.horizontalLayout_16)
+
+        self.stackedWidget_dashboard.addWidget(self.attandance_page)
 
         self.horizontalLayout.addWidget(self.stackedWidget_dashboard)
 
@@ -843,10 +1564,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.manager_btn)
 
-        self.pushButton_3 = QPushButton(self.widget)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.pushButton_3.setFont(font3)
-        self.pushButton_3.setStyleSheet(u"QPushButton{\n"
+        self.attandance_btn = QPushButton(self.widget)
+        self.attandance_btn.setObjectName(u"attandance_btn")
+        self.attandance_btn.setFont(font3)
+        self.attandance_btn.setStyleSheet(u"QPushButton{\n"
 "font-family: \"B Nazanin\";\n"
 "background-color:#4CAF50;\n"
 "color:white;\n"
@@ -865,7 +1586,7 @@ class Ui_MainWindow(object):
 "\n"
 "")
 
-        self.verticalLayout.addWidget(self.pushButton_3)
+        self.verticalLayout.addWidget(self.attandance_btn)
 
         self.pushButton_4 = QPushButton(self.widget)
         self.pushButton_4.setObjectName(u"pushButton_4")
@@ -933,8 +1654,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget_dashboard.setCurrentIndex(1)
-        self.mange_tab.setCurrentIndex(2)
+        self.stackedWidget_dashboard.setCurrentIndex(2)
+        self.mange_tab.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -958,18 +1679,18 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem2 = self.class_tableWidget.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"class_nam", None));
         self.mange_tab.setTabText(self.mange_tab.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"\u0644\u06cc\u0633\u062a \u06a9\u0644\u0627\u0633\u0647\u0627", None))
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"\u067e\u0627\u06cc\u0647 :", None))
-        self.Grade_comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"\u062f\u0647\u0645 ", None))
-        self.Grade_comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"\u06cc\u0627\u0632\u062f\u0647\u0645", None))
-        self.Grade_comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"\u062f\u0648\u0627\u0632\u062f\u0647\u0645", None))
-
-        self.label.setText(QCoreApplication.translate("MainWindow", u"\u0631\u0634\u062a\u0647:", None))
+        self.sub_btn.setText(QCoreApplication.translate("MainWindow", u"\u062b\u0628\u062a", None))
         self.Field_comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"\u0645\u0627\u0634\u06cc\u0646 \u0627\u0628\u0632\u0627\u0631 ", None))
         self.Field_comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"\u0633\u0627\u062e\u062a\u0645\u0627\u0646", None))
         self.Field_comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"\u0645\u06a9\u0627\u0646\u06cc\u06a9", None))
         self.Field_comboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"\u0645\u06a9\u0627\u062a\u0631\u0648\u0646\u06cc\u06a9", None))
 
-        self.sub_btn.setText(QCoreApplication.translate("MainWindow", u"\u062b\u0628\u062a", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"\u0631\u0634\u062a\u0647:", None))
+        self.Grade_comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"\u062f\u0647\u0645 ", None))
+        self.Grade_comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"\u06cc\u0627\u0632\u062f\u0647\u0645", None))
+        self.Grade_comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"\u062f\u0648\u0627\u0632\u062f\u0647\u0645", None))
+
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"\u067e\u0627\u06cc\u0647 :", None))
         self.mange_tab.setTabText(self.mange_tab.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"\u0627\u0641\u0632\u0648\u062f\u0646 \u06a9\u0644\u0627\u0633 \u062c\u062f\u06cc\u062f", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u06a9\u062f \u0645\u0644\u06cc:", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0627\u0645:", None))
@@ -984,11 +1705,38 @@ class Ui_MainWindow(object):
         self.student_id_lineEdit.setInputMask("")
         self.submit_student_btn.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0641\u0632\u0648\u062f\u0646", None))
         self.mange_tab.setTabText(self.mange_tab.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"\u0627\u0641\u0632\u0648\u062f\u0646 \u062f\u0627\u0646\u0634 \u0622\u0645\u0648\u0632", None))
+        self.label_18.setText(QCoreApplication.translate("MainWindow", u"\u06a9\u062f \u0645\u0644\u06cc:", None))
+        self.label_19.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0627\u0645:", None))
+        self.firstNameSearchLineEdit.setInputMask("")
+        self.label_20.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc :", None))
+        self.lastNameSearchLineEdit.setInputMask("")
+        self.searchButton.setText(QCoreApplication.translate("MainWindow", u"\u062c\u0633\u062a\u062c\u0648", None))
+        self.label_21.setText(QCoreApplication.translate("MainWindow", u"\u06a9\u062f \u0645\u0644\u06cc:", None))
+        self.nationalCodeEditLineEdit.setInputMask("")
+        self.label_22.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0627\u0645:", None))
+        self.label_23.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0627\u0645 \u062e\u0627\u0646\u0648\u0627\u062f\u06af\u06cc :", None))
+        self.label_24.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0627\u0645 \u067e\u062f\u0631 :", None))
+        self.label_25.setText(QCoreApplication.translate("MainWindow", u"\u06a9\u0644\u0627\u0633 :", None))
+        self.class_comboBox_2.setItemText(0, QCoreApplication.translate("MainWindow", u"\u0631\u06cc\u0627\u0636\u06cc", None))
+        self.class_comboBox_2.setItemText(1, QCoreApplication.translate("MainWindow", u"\u062a\u062c\u0631\u0628\u06cc", None))
+
+        self.class_comboBox_2.setCurrentText(QCoreApplication.translate("MainWindow", u"\u0631\u06cc\u0627\u0636\u06cc", None))
+        self.label_26.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0645\u0627\u0631\u0647 \u062a\u0645\u0627\u0633 :", None))
+        self.update_student_btn.setText(QCoreApplication.translate("MainWindow", u"\u0648\u06cc\u0631\u0627\u06cc\u0634", None))
         self.mange_tab.setTabText(self.mange_tab.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"\u0648\u06cc\u0631\u0627\u06cc\u0634", None))
+        self.loadButton.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0644\u06cc\u0633\u062a", None))
+        self.label_28.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0627\u0631\u06cc\u062e:", None))
+        self.class_comboBox_3.setItemText(0, QCoreApplication.translate("MainWindow", u"\u0631\u06cc\u0627\u0636\u06cc", None))
+        self.class_comboBox_3.setItemText(1, QCoreApplication.translate("MainWindow", u"\u062a\u062c\u0631\u0628\u06cc", None))
+
+        self.class_comboBox_3.setCurrentText(QCoreApplication.translate("MainWindow", u"\u0631\u06cc\u0627\u0636\u06cc", None))
+        self.label_27.setText(QCoreApplication.translate("MainWindow", u"\u06a9\u0644\u0627\u0633 :", None))
+        self.cancelButton.setText(QCoreApplication.translate("MainWindow", u"\u0644\u063a\u0648", None))
+        self.saveButton.setText(QCoreApplication.translate("MainWindow", u"\u0630\u062e\u06cc\u0631\u0647", None))
         self.pic_main.setText("")
         self.main_btn.setText(QCoreApplication.translate("MainWindow", u"\u0635\u0641\u062d\u0647 \u0627\u0635\u0644\u06cc ", None))
         self.manager_btn.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062f\u06cc\u0631\u06cc\u062a", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"\u062b\u0628\u062a \u0648\u0636\u0639\u06cc\u062a", None))
+        self.attandance_btn.setText(QCoreApplication.translate("MainWindow", u"\u062b\u0628\u062a \u0648\u0636\u0639\u06cc\u062a", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"\u06af\u0632\u0627\u0631\u0634", None))
         self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0637\u0644\u0627\u0639 \u0631\u0633\u0627\u0646\u06cc", None))
     # retranslateUi
