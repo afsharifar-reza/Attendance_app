@@ -3,6 +3,7 @@ from back_end.database import get_connection
 class AttendanceModel:
     def __init__(self):
         self.conn = get_connection()
+        self.cursor = self.conn.cursor()
         self.create_table()
 
     def create_table(self):
@@ -27,12 +28,12 @@ class AttendanceModel:
 
     def get_attendance_record(self, student_id, date):
         try:
-            cursor = self.conn.cursor()
-            cursor.execute('''
-                SELECT id FROM Attendance
-                WHERE student_id = ? AND date = ?
-            ''', (student_id, date))
-            return cursor.fetchone()
+            with self.conn:
+                self.cursor.execute('''
+                    SELECT id FROM Attendance
+                    WHERE student_id = ? AND date = ?
+                ''', (student_id, date))
+                return self.cursor.fetchone()
         except Exception as e:
             print(f"[!] خطا در بررسی رکورد موجود: {e}")
             return None
@@ -43,9 +44,9 @@ class AttendanceModel:
                         delay_minutes=0):
         try:
             existing = self.get_attendance_record(student_id, date)
-            if existing:
-                attendance_id = existing[0]
-                with self.conn:
+            with self.conn:
+                if existing:
+                    attendance_id = existing[0]
                     self.conn.execute('''
                         UPDATE Attendance SET
                             status_hour_1 = ?, status_hour_2 = ?,
@@ -53,8 +54,7 @@ class AttendanceModel:
                             delay_minutes = ?
                         WHERE id = ?
                     ''', (status_hour_1, status_hour_2, status_hour_3, status_hour_4, delay_minutes, attendance_id))
-            else:
-                with self.conn:
+                else:
                     self.conn.execute('''
                         INSERT INTO Attendance (
                             student_id, date,
@@ -68,23 +68,70 @@ class AttendanceModel:
             print(f"[!] خطا در ذخیره حضور و غیاب: {e}")
             return False
 
-
     def get_attendance_by_date(self, date):
         try:
-            cursor = self.conn.cursor()
-            cursor.execute('SELECT * FROM Attendance WHERE date = ?', (date,))
-            return cursor.fetchall()
+            with self.conn:
+                self.cursor.execute('SELECT * FROM Attendance WHERE date = ?', (date,))
+                return self.cursor.fetchall()
         except Exception as e:
             print(f"[!] خطا در دریافت داده‌های روز {date}: {e}")
             return []
 
     def get_attendance_by_student(self, student_id):
         try:
-            cursor = self.conn.cursor()
-            cursor.execute('SELECT * FROM Attendance WHERE student_id = ?', (student_id,))
-            return cursor.fetchall()
+            with self.conn:
+                self.cursor.execute('SELECT * FROM Attendance WHERE student_id = ?', (student_id,))
+                return self.cursor.fetchall()
         except Exception as e:
             print(f"[!] خطا در دریافت حضور و غیاب دانش‌آموز: {e}")
+            return []
+
+    def get_attendance_report_by_class(self, class_id, start_date, end_date):
+        try:
+            with self.conn:
+                query = """
+                    SELECT
+                        s.student_id,
+                        s.first_name,
+                        s.last_name,
+                        a.date,
+                        a.status_hour_1,
+                        a.status_hour_2,
+                        a.status_hour_3,
+                        a.status_hour_4,
+                        a.delay_minutes
+                    FROM attendance a
+                    JOIN student s ON a.student_id = s.student_id
+                    WHERE s.class_id = ?
+                    AND a.date BETWEEN ? AND ?
+                    ORDER BY a.date
+                """
+                self.cursor.execute(query, (class_id, start_date, end_date))
+                return self.cursor.fetchall()
+        except Exception as e:
+            print(f"[!] خطا در دریافت گزارش کلاس: {e}")
+            return []
+
+    def get_attendance_report_by_student(self, student_id, start_date, end_date):
+        try:
+            with self.conn:
+                query = """
+                    SELECT
+                        a.date,
+                        a.status_hour_1,
+                        a.status_hour_2,
+                        a.status_hour_3,
+                        a.status_hour_4,
+                        a.delay_minutes
+                    FROM attendance a
+                    WHERE a.student_id = ?
+                    AND a.date BETWEEN ? AND ?
+                    ORDER BY a.date
+                """
+                self.cursor.execute(query, (student_id, start_date, end_date))
+                return self.cursor.fetchall()
+        except Exception as e:
+            print(f"[!] خطا در دریافت گزارش دانش‌آموز: {e}")
             return []
 
     def __del__(self):

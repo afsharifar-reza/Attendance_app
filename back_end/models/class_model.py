@@ -14,7 +14,8 @@ class ClassModel:
                         grade TEXT NOT NULL,
                         field TEXT NOT NULL,
                         class_name TEXT NOT NULL,
-                        UNIQUE(grade, field)
+                        
+                                  
                     )
                 ''')
         except Exception as e:
